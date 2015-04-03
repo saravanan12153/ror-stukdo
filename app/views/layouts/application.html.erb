@@ -6,6 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Stukdo</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <style type="text/css">
+      .footer {
+          bottom: 0px;
+          padding-top: 1%;
+          width: 100%;
+          height: 60px;
+          background-color: #F5F5F5;
+      }
+  </style>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -16,6 +25,11 @@
 <div class="container">
     <%= yield %>
 </div>
+<footer class="footer">
+  <div class="container">
+    <p class="text-muted text-right">&copy;2015, Sulman Baig</p>
+  </div>
+</footer>
 
 </body>
 </html>
