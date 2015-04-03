@@ -44,6 +44,9 @@ gem 'simple_form'
 # gem for devise
 gem 'devise'
 
+# gem for auto_html
+gem 'auto_html'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
