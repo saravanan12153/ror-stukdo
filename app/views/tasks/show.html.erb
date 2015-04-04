@@ -1,13 +1,27 @@
 <p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-3 col-lg-3">
 
-<p>
-  <strong>Content:</strong>
-  <%= @task.content %>
-</p>
-<p>
-  <strong>State:</strong>
-  <%= @task.state %>
-</p>
+  </div>
+  <div class="col-md-6 col-lg-6">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <%= link_to edit_task_path(@task) do %>
+            Created <%= time_ago_in_words(@task.created_at) %> ago
+        <% end %>
+        <%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, task_path(@task), method: :delete, data: {confirm: 'Are you sure?'}, class: 'pull-right' %>
+      </div>
+      <div class="panel-body">
+        <%= @task.content_html %>
+      </div>
+      <div class="panel-footer text-center">
+        <strong>State: </strong><%= @task.state %>
+      </div>
+    </div>
+    <%= link_to 'Edit', edit_task_path(@task) %> |
+    <%= link_to 'Back', tasks_path %>
+  </div>
+  <div class="col-md-3 col-lg-3">
 
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+  </div>
+</div>
